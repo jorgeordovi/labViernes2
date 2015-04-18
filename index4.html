@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Lab2Vienes</title>
+	</head>
+<body>
+		<h1>Productos</h1>
+	<ul>
+	<li>Smartphone {{ 500000 | currency }}</li>
+		<li>Tablet {{ 200000 | currency: "$" }}</li>
+		<li>laptop {{ 3000000* 0.16 + 20000 | currency: "$"}} </li>
+		<li> Importado de {{ 'MaDe In ChiNA' | uppercase }} 
+	</li>
+	<script type="text/javascript"src="assets/angular.min.js"></script>
+	
+</body>
+</html>
