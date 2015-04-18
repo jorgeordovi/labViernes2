@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="reveal-app">
 <head>
-	<meta charset="UTF-8">
-	<title>Lab2Vienes</title>
-	</head>
+	<title>AngularJS First Application</title>
+	<meta charset="utf-8" />
+</head>
 <body>
-		<h1>Productos</h1>
-	<ul>
-	<li>Smartphone {{ 500000 | currency }}</li>
-		<li>Tablet {{ 200000 | currency: "$" }}</li>
-		<li>laptop {{ 3000000* 0.16 + 20000 | currency: "$"}} </li>
-		<li> Importado de {{ 'MaDe In ChiNA' | uppercase }} 
-	</li>
-	<script type="text/javascript"src="assets/angular.min.js"></script>
-	
+	<div ng-controller="controllerOne">
+		<div ng-show="revealDiv">
+			<h1>Hola mundo</h1>
+		</div>
+
+		<button ng-click="controlButton()" ng-show="revealButton">Ocultar button</button>
+	</div>
+	<script type="text/javascript" src="assets/angular.min.js"></script>
+
+	<script type="text/javascript">
+
+	angular.module('reveal-app', [])
+		   .controller('controllerOne', ['$scope', function($scope){
+		   		$scope.revealDiv = false;
+		   		$scope.revealButton = true;
+
+		   		$scope.controlButton = function(){
+		   			$scope.revealDiv = true;
+		   			$scope.revealButton = false;
+		   		};
+
+		   }]);
+	</script>
+
 </body>
 </html>
